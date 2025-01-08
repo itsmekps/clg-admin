@@ -1,4 +1,5 @@
-export const MENU_SIDEBAR = [{
+export const MENU_SIDEBAR = [
+{
   title: 'Dashboards',
   icon: 'element-11',
   children: [{
@@ -8,9 +9,16 @@ export const MENU_SIDEBAR = [{
     title: 'Dark Sidebar',
     path: '/dark-sidebar'
   }]
-}, {
-  heading: 'User'
-}, {
+}, 
+{
+  title: 'Players',
+  icon: 'users',
+  path: '/network/user-table/team-crew'
+},
+// {
+//   heading: 'User'
+// }, 
+{
   title: 'Public Profile',
   icon: 'profile-circle',
   children: [{

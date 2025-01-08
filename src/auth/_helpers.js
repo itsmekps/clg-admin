@@ -1,6 +1,8 @@
 import { getData, setData } from '@/utils';
 const AUTH_LOCAL_STORAGE_KEY = `${import.meta.env.VITE_APP_NAME}-auth-v${import.meta.env.VITE_APP_VERSION}`;
 const getAuth = () => {
+  console.log("GET AUTH")
+
   try {
     const auth = getData(AUTH_LOCAL_STORAGE_KEY);
     if (auth) {
@@ -13,6 +15,7 @@ const getAuth = () => {
   }
 };
 const setAuth = auth => {
+  console.log("SET AUTH")
   setData(AUTH_LOCAL_STORAGE_KEY, auth);
 };
 const removeAuth = () => {
@@ -26,6 +29,7 @@ const removeAuth = () => {
   }
 };
 export function setupAxios(axios) {
+  console.log("SETUP AXIOS")
   axios.defaults.headers.Accept = 'application/json';
   axios.interceptors.request.use(config => {
     const auth = getAuth();

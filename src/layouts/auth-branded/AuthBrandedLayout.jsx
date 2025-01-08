@@ -10,7 +10,7 @@ const Layout = () => {
       <style>
         {`
           .branded-bg {
-            background-image: url('${toAbsoluteUrl('/media/images/2600x1600/1.png')}');
+            background-image: url('${toAbsoluteUrl('/media/images/2600x1600/1.webp')}');
           }
           .dark .branded-bg {
             background-image: url('${toAbsoluteUrl('/media/images/2600x1600/1-dark.png')}');
@@ -24,7 +24,7 @@ const Layout = () => {
         </div>
 
         <div className="lg:rounded-xl lg:border lg:border-gray-200 lg:m-5 order-1 lg:order-2 bg-top xxl:bg-center xl:bg-cover bg-no-repeat branded-bg">
-          <div className="flex flex-col p-8 lg:p-16 gap-4">
+          {/* <div className="flex flex-col p-8 lg:p-16 gap-4">
             <Link to="/">
               <img src={toAbsoluteUrl('/media/app/mini-logo.svg')} className="h-[28px] max-w-none" alt="" />
             </Link>
@@ -39,7 +39,7 @@ const Layout = () => {
                 <br /> Dashboard interface.
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </Fragment>;

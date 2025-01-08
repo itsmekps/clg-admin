@@ -7,24 +7,31 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { UsersData } from './';
 import { toast } from 'sonner';
 import { Input } from '@/components/ui/input';
+import axios from 'axios';
+const API_URL = import.meta.env.VITE_APP_API_URL;
+export const PLAYERS_LIST_URL = `${API_URL}/players`;
 const Users = () => {
+
   const ColumnInputFilter = ({
     column
   }) => {
     return <Input placeholder="Filter..." value={column.getFilterValue() ?? ''} onChange={event => column.setFilterValue(event.target.value)} className="h-9 w-full max-w-40" />;
   };
-  const columns = useMemo(() => [{
-    accessorKey: 'id',
-    header: () => <DataGridRowSelectAll />,
-    cell: ({
-      row
-    }) => <DataGridRowSelect row={row} />,
-    enableSorting: false,
-    enableHiding: false,
-    meta: {
-      headerClassName: 'w-0'
-    }
-  }, {
+
+  const columns = useMemo(() => [
+  // {
+  //   accessorKey: 'id',
+  //   header: () => <DataGridRowSelectAll />,
+  //   cell: ({
+  //     row
+  //   }) => <DataGridRowSelect row={row} />,
+  //   enableSorting: false,
+  //   enableHiding: false,
+  //   meta: {
+  //     headerClassName: 'w-0'
+  //   }
+  // }, 
+  {
     accessorFn: row => row.user,
     id: 'users',
     header: ({

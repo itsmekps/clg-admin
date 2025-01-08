@@ -28,15 +28,17 @@ const DropdownUser = ({
     });
   };
   const buildHeader = () => {
+    const { currentUser } = useAuthContext()
+    console.log("currentUser: ", currentUser)
     return <div className="flex items-center justify-between px-5 py-1.5 gap-1.5">
         <div className="flex items-center gap-2">
           <img className="size-9 rounded-full border-2 border-success" src={toAbsoluteUrl('/media/avatars/300-2.png')} alt="" />
           <div className="flex flex-col gap-1.5">
             <Link to="/account/hoteme/get-stard" className="text-sm text-gray-800 hover:text-primary font-semibold leading-none">
-              Cody Fisher
+              {currentUser.data.user.firstName} {currentUser.data.user.lastName}
             </Link>
             <a href="mailto:c.fisher@gmail.com" className="text-xs text-gray-600 hover:text-primary font-medium leading-none">
-              c.fisher@gmail.com
+              {currentUser.data.user.email}
             </a>
           </div>
         </div>
